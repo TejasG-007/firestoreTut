@@ -3,6 +3,7 @@ import 'package:firabasetut/screens/home_screen.dart';
 import 'package:firabasetut/screens/register_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,10 +13,11 @@ void main()async{
 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.android
+    name: "projectk-ef18f",
+    options: DefaultFirebaseOptions.android,
   );
   Get.lazyPut(()=>AuthController());
-  return runApp(MyApp());
+  return runApp(const MyApp());
 }
 
 
